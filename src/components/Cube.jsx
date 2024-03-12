@@ -14,6 +14,7 @@ const Cube = () => {
           <color attach="background" args={["#dc9dcd"]} />
           <Text fontSize={1} color="#555">
             Ali
+            Ali
           </Text>
         </RenderTexture>
       </meshStandardMaterial>
