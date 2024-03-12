@@ -1,6 +1,8 @@
+import { OrbitControls } from '@react-three/drei'
+import { Canvas } from '@react-three/fiber'
 import { styled } from 'styled-components'
 import React from 'react'
-import { Canvas } from '@react-three/fiber'
+import Cube from './Cube'
 
 const Container = styled.div`
  height: 100vh;
@@ -12,9 +14,10 @@ const Test = () => {
   return (
     <Container>
       <Canvas>
-        <mesh>
-          <boxGeometry args={[1,1,1]}/>
-        </mesh>
+        <OrbitControls enableZoom={false}/>
+        <ambientLight intensity={1}/>
+        <directionalLight position={[3,2,1]}/>
+        <Cube/>
       </Canvas>
     </Container>
   )
