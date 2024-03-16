@@ -4,7 +4,7 @@ import Hero from "./components/Hero"
 import Who from "./components/Who"
 import Works from "./components/Works"
 import Navbar from "./components/Navbar"
-import Test from "./components/Test"
+import './style.css';
 
 const Container = styled.div`
   height: 100vh;
@@ -28,7 +28,6 @@ function App() {
       <Who />
       <Works />
       <Contact />
-      <Test/>
     </Container>
   )
 }

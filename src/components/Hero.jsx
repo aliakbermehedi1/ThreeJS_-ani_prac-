@@ -1,6 +1,8 @@
 import React from "react";
 import { styled } from "styled-components";
 import Navbar from "./Navbar";
+import { MeshDistortMaterial, OrbitControls, Sphere } from "@react-three/drei";
+import { Canvas } from "@react-three/fiber";
 
 const Section = styled.div`
   height: 100vh;
@@ -63,8 +65,8 @@ const Right = styled.div`
   position: relative;
 `;
 const Img = styled.img`
-  width: 800px;
-  height: 600px;
+  width: 700px;
+  height: 500px;
   object-fit: contain;
   position: absolute;
   top: 0;
@@ -75,10 +77,9 @@ const Img = styled.img`
   animation: animate 2s infinite ease alternate;
 
   @keyframes animate {
-    to{
+    to {
       transform: translateY(20px);
     }
-    
   }
 `;
 
@@ -100,7 +101,20 @@ const Hero = () => {
         </Left>
         <Right>
           {/* 3D Model  */}
-          <Img src="./img/moon.png" />
+          <Canvas>
+            <OrbitControls enableZoom={false} />
+            <ambientLight intensity={1} />
+            <directionalLight position={[3, 2, 5]} />
+            <Sphere args={[1, 100, 300]} scale={2.5}>
+              <MeshDistortMaterial
+                color="#8848b8"
+                attach="material"
+                distort={0.5}
+                speed={2}
+              />
+            </Sphere>
+          </Canvas>
+          <Img  src="./img/moon.png" />
         </Right>
       </Container>
     </Section>
