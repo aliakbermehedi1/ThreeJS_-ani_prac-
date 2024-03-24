@@ -13,22 +13,31 @@ const Desc = styled.div`
   position: absolute;
   bottom: 10px;
   right: 100px;
-`
+
+
+  @media only screen and (max-width: 768px) {
+   top: 0;
+   bottom: 0;
+   left: 0;
+   right: 0;
+   margin: auto;
+  }
+`;
 
 const WebDesign = () => {
   return (
     <>
-    <Canvas>
-      <Stage environment="city" intensity={0.6}>
-      <Mac scale={[0.5, 0.5, 0.5]} />
+      <Canvas>
+        <Stage environment="city" intensity={0.6}>
+          <Mac scale={[0.5, 0.5, 0.5]} />
+        </Stage>
+        <OrbitControls enableZoom={false} />
+      </Canvas>
 
-      </Stage>
-      <OrbitControls enableZoom={false} />
-    </Canvas>
-
-    <Desc>
-    We design products with a strong focus on both world class design and ensuring your product is a market success.
-    </Desc>
+      <Desc>
+        We design products with a strong focus on both world class design and
+        ensuring your product is a market success.
+      </Desc>
     </>
   );
 };

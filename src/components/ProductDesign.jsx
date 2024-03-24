@@ -5,13 +5,14 @@ import Shoe from "./Shoe";
 import { styled } from "styled-components";
 
 const ProductDesign = () => {
-  const ColorSetup = styled.div`
+  const Desc = styled.div`
     width: 200px;
     height: 70px;
+    padding: 20px;
     background-color: white;
     border-radius: 10px;
     position: absolute;
-    bottom: 10px;
+    top: 100px;
     right: 100px;
   `;
 
@@ -24,12 +25,10 @@ const ProductDesign = () => {
         <OrbitControls enableZoom={false} />
       </Canvas>
 
-      <ColorSetup>
-       <div className="flex gap-2">
-        <div className="w-3 h-3 bg-green-700">HI</div>
-        <div className="w-3 h-3 bg-blue-800"></div>
-       </div>
-      </ColorSetup>
+      <Desc>
+        We design products with a strong focus on both world class design and
+        ensuring your product is a market success.
+      </Desc>
     </>
   );
 };

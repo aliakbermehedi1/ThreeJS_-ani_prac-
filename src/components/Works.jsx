@@ -21,17 +21,31 @@ const Section = styled.div`
   color: black;
   font-size: 14px;
   font-weight: 300;
+
+  @media only screen and (max-width: 768px) {
+    height: 200vh;
+  }
 `;
 
 const Container = styled.div`
   width: 1400px;
   display: flex;
   justify-content: space-between;
+
+  @media only screen and (max-width: 768px) {
+    width: 100%;
+    flex-direction: column;
+  }
 `;
 const Left = styled.div`
   flex: 1;
   display: flex;
   align-items: center;
+
+  @media only screen and (max-width: 768px) {
+    padding: 10px;
+    justify-content: center;
+  }
 `;
 const List = styled.ul`
   list-style: none;
@@ -68,10 +82,17 @@ const ListItem = styled.li`
       }
     }
   }
+
+  @media only screen and (max-width: 768px) {
+    font-size: 30px;
+    color: white;
+    -webkit-text-stroke: 0px white;
+  }
 `;
 
 const Right = styled.div`
   flex: 2;
+
 `;
 
 const Works = () => {
@@ -82,7 +103,7 @@ const Works = () => {
         <Left>
           <List>
             {data.map((item) => (
-              <ListItem key={item} text={item} onClick={()=> setWork(item)}>
+              <ListItem key={item} text={item} onClick={() => setWork(item)}>
                 {item}
               </ListItem>
             ))}

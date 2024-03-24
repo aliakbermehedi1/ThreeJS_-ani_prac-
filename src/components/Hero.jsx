@@ -1,8 +1,8 @@
 import React from "react";
 import { styled } from "styled-components";
-import Navbar from "./Navbar";
 import { MeshDistortMaterial, OrbitControls, Sphere } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
+import Navbar from "./Navbar";
 
 const Section = styled.div`
   height: 100vh;
@@ -11,13 +11,24 @@ const Section = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+
+  @media only screen and (max-width: 768px) {
+    height: 200vh;
+  }
 `;
 const Container = styled.div`
-  height: 100vh;
+  height: 100%;
   scroll-snap-align: center;
   width: 1400px;
   display: flex;
   justify-content: space-between;
+
+  @media only screen and (max-width: 768px) {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
 `;
 const Left = styled.div`
   flex: 2;
@@ -25,9 +36,18 @@ const Left = styled.div`
   flex-direction: column;
   justify-content: center;
   gap: 20px;
+
+  @media only screen and (max-width: 768px) {
+    flex: 1;
+    align-items: center;
+  }
 `;
 const Title = styled.h1`
   font-size: 74px;
+
+  @media only screen and (max-width: 768px) {
+    text-align: center;
+  }
 `;
 
 const WhatWeDo = styled.div`
@@ -47,6 +67,11 @@ const SubTitle = styled.h2`
 const Desc = styled.p`
   font-size: 24px;
   color: lightgray;
+
+  @media only screen and (max-width: 768px) {
+    padding: 20px;
+    text-align: center;
+  }
 `;
 
 const Button = styled.button`
@@ -63,10 +88,15 @@ const Button = styled.button`
 const Right = styled.div`
   flex: 3;
   position: relative;
+
+  @media only screen and (max-width: 768px) {
+    flex: 1;
+    width: 100%;
+  }
 `;
 const Img = styled.img`
-  width: 700px;
-  height: 500px;
+  width: 600px;
+  height: 400px;
   object-fit: contain;
   position: absolute;
   top: 0;
@@ -80,6 +110,11 @@ const Img = styled.img`
     to {
       transform: translateY(20px);
     }
+  }
+
+  @media only screen and (max-width: 768px) {
+    width: 400px;
+    height: 360px;
   }
 `;
 
@@ -100,12 +135,11 @@ const Hero = () => {
           <Button>Learn More</Button>
         </Left>
         <Right>
-          {/* 3D Model  */}
           <Canvas>
             <OrbitControls enableZoom={false} />
             <ambientLight intensity={1} />
             <directionalLight position={[3, 2, 5]} />
-            <Sphere args={[1, 100, 300]} scale={2.5}>
+            <Sphere args={[1, 100, 300]} scale={2}>
               <MeshDistortMaterial
                 color="#8848b8"
                 attach="material"
@@ -114,7 +148,7 @@ const Hero = () => {
               />
             </Sphere>
           </Canvas>
-          <Img  src="./img/moon.png" />
+          <Img src="./img/moon.png" />
         </Right>
       </Container>
     </Section>

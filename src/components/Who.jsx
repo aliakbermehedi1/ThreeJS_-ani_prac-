@@ -11,13 +11,24 @@ const Section = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  @media only screen and (max-width: 768px) {
+    height: 200vh;
+  }
 `;
 const Container = styled.div`
-  height: 100vh;
+  height: 100%;
   scroll-snap-align: center;
   width: 1400px;
   display: flex;
   justify-content: space-between;
+
+  @media only screen and (max-width: 768px) {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
 `;
 
 // START Left Component
@@ -34,10 +45,19 @@ const Right = styled.div`
   flex-direction: column;
   justify-content: center;
   gap: 20px;
+
+  @media only screen and (max-width: 768px) {
+    align-items: center;
+    text-align: center;
+  }
 `;
 
 const Title = styled.h1`
   font-size: 74px;
+
+  @media only screen and (max-width: 768px) {
+    font-size: 60px;
+  }
 `;
 
 const WhatWeDo = styled.div`
